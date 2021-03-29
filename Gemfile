@@ -1,14 +1,15 @@
 source "https://rubygems.org"
 ruby File.read(File.expand_path("../.ruby-version", __FILE__)).chomp
 
-gem "rails", "~> 6.0.3"
+gem "rails", "~> 6.1.3"
 
-gem "aws-sdk-s3", "~> 1.88", require: false
+gem "aws-sdk-s3", "~> 1.93", require: false
 gem "comfortable_mexican_sofa", "~> 2.0"
 gem "comfy_blog", "~> 2.0"
 gem "devise", '~> 4.7.3'
 gem "fastly", "~> 3.0"
 gem "http", "~> 4.4"
+gem "http-parser", "~> 1.2.3" # required for Apple Silicon
 gem "jquery-rails", "~> 4.4"
 gem "lograge", "~> 0.11"
 gem "mail", "~> 2.7.1"
@@ -41,15 +42,15 @@ end
 group :development, :test do
   gem "dotenv-rails", "~> 2.7"
   gem "pry-byebug", "~> 3.9"
-  gem "rspec-rails", "~> 4.0"
+  gem "rspec-rails", "~> 5.0"
 end
 
 group :production do
-  gem "postmark-rails", "~> 0.20"
+  gem "postmark-rails", "~> 0.21"
   gem "sprockets-redirect", "~> 1.0"
 end
 
 group :test do
-  gem "webmock", "~> 3.11", require: false
+  gem "webmock", "~> 3.12", require: false
   gem "vcr", "~> 6.0"
 end
